@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <title>QR Code</title>
+</head>
+
+<body bgcolor="white">
+    <!-- Load the library -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <h1>Basic and simple one</h1>
+    <div id="qrcode"></div>
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), "https://webisora.com");
+    </script>
+
+    <h1>With some options</h1>
+
+    <div id="qrcode-2"></div>
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode-2"), {
+            text: "DCO-0001,4550235124727,27-JAN-1985,20-MAR-2013,DCO,16",
+            width: 256,
+            height: 256,
+            colorDark: "#5868bf",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+    <h1>With WhatsApp Link</h1>
+    <div id="qrcode-3"></div>
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode-3"), {
+            text: "https://api.whatsapp.com/send?phone=92519201564&text=Assalam-o-Alaikum!%20Can%20I%20have%20your%20attention%20please%3F",
+            width: 256,
+            height: 256,
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+</body>
+
+</html>
